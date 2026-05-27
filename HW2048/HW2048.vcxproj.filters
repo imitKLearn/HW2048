@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스파일">
+      <UniqueIdentifier>{5cfd0208-3923-4000-ab26-a5aae881a172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일">
+      <UniqueIdentifier>{79a7e679-e638-4989-a324-7aa624ae0f7f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HW\MyFirstWndGame.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HW\NzWndBase.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HW\INC_Windows.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HW\GameTimer.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HW\MyFirstWndGame.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="HW\NzWndBase.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="HW\GameTimer.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

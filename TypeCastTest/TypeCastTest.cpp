@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 class PureClass
 {
@@ -24,7 +24,7 @@ class DerivedClass2 : public PureClass, public PureClass2
 	virtual void PureFunction2()override {}
 };
 
-void main()
+int main()
 {
 	std::cout << "Size: " << sizeof(PureClass) << std::endl;
 	std::cout << "Size: " << sizeof(DerivedClass) << std::endl;
