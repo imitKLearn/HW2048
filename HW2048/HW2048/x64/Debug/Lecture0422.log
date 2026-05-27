@@ -1,0 +1,27 @@
+﻿  Collider.cpp
+  GameObject.cpp
+  GameTimer.cpp
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(122,32): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(121,32): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(120,32): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(119,44): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(130,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(129,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(128,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(127,43): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(158,24): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(158,14): warning C4244: '초기화 중': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(159,24): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\GameObject.cpp(159,14): warning C4244: '초기화 중': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Main.cpp
+  MyFirstWndGame.cpp
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\MyFirstWndGame.cpp(177,10): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\MyFirstWndGame.cpp(178,10): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\MyFirstWndGame.cpp(215,58): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\MyFirstWndGame.cpp(215,37): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\MyFirstWndGame.cpp(299,27): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  NzWndBase.cpp
+  RenderHelp.cpp
+  Utillity.cpp
+  코드를 생성하고 있습니다...
+  Lecture0422.vcxproj -> D:\KM\Kocca08\CPP\W\(HW1)\BitMap_and_Animation\Lecture0422\x64\Debug\HW2048.exe
