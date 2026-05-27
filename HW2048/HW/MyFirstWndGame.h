@@ -3,8 +3,9 @@
 #include "GameTimer.h"
 
 #include <iostream>
+#include <random> // 난수 라이브러리 포함
+#include <string> // 보드 숫자
 #pragma region 전방선언
-
 class GameTimer;
 #pragma endregion
 
@@ -20,6 +21,12 @@ public:
 private:
 	void _InitTimer();
 	bool _InitWindow();
+
+private:
+	void _Init2048();
+	void AddRandomTile();
+	void RenderBoard();
+	void RenderTile(int row, int col, int value);
 
 private:
 	void Update();
@@ -41,4 +48,14 @@ private:
 	GameTimer* m_pGameTimer = nullptr;
 	float m_fDeltaTime = 0.0f;
 	float m_fFrameCount = 0.0f;
+private:
+	static const int BOARD_SIZE = 4;
+
+	int m_board[BOARD_SIZE][BOARD_SIZE] = {};
+	int m_score = 0;
+
+	int m_boardStartX = 300;
+	int m_boardStartY = 150;
+	int m_cellSize = 90;
+	int m_cellGap = 10;
 };
