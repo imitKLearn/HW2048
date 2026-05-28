@@ -16,13 +16,14 @@ void MyFirstWndGame::Run()
 	{
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
-			if (msg.message == WM_LBUTTONDOWN
-				//|| msg.message ==
-				)
-			{
-				std::cout << "***" << __FUNCTION__ << std::endl;
-			}
-			else if (msg.message == WM_KEYDOWN)
+			//if (msg.message == WM_LBUTTONDOWN
+			//	//|| msg.message ==
+			//	)
+			//{
+			//	std::cout << "***" << __FUNCTION__ << std::endl;
+			//}
+			//else
+			if (msg.message == WM_KEYDOWN)
 			{
 				bool moved = false;
 
@@ -37,7 +38,7 @@ void MyFirstWndGame::Run()
 
 				if (moved)
 				{
-					//AddRandomTile();
+					AddRandomTile();
 				}
 			}
 			else
@@ -143,6 +144,8 @@ void MyFirstWndGame::AddRandomTile()
 			}
 		}
 	}
+
+	std::cout << __FUNCTION__ << std::endl;
 }
 
 void MyFirstWndGame::RenderBoard()
@@ -213,27 +216,236 @@ void MyFirstWndGame::Render()
 bool MyFirstWndGame::MoveLeft()
 {
 	std::cout << __FUNCTION__ << std::endl;
+	bool moved = false;
 
-	return false;
+	for (int r = 0; r < BOARD_SIZE; ++r)
+	{
+		int temp[BOARD_SIZE] = {};
+		int index = 0;
+
+		// 1. 0이 아닌 숫자만 왼쪽부터 모으기
+		for (int c = 0; c < BOARD_SIZE; ++c)
+		{
+			if (m_board[r][c] != 0)
+			{
+				temp[index] = m_board[r][c];
+				++index;
+			}
+		}
+
+		// 2. 같은 숫자 합치기
+		for (int i = 0; i < BOARD_SIZE - 1; ++i)
+		{
+			if (temp[i] != 0 && temp[i] == temp[i + 1])
+			{
+				temp[i] *= 2;
+				m_score += temp[i];
+
+				temp[i + 1] = 0;
+			}
+		}
+
+		// 3. 합치고 생긴 0을 다시 제거해서 왼쪽으로 밀기
+		int result[BOARD_SIZE] = {};
+		index = 0;
+
+		for (int i = 0; i < BOARD_SIZE; ++i)
+		{
+			if (temp[i] != 0)
+			{
+				result[index] = temp[i];
+				++index;
+			}
+		}
+
+		// 4. 원래 보드와 다르면 이동했다고 판단
+		for (int c = 0; c < BOARD_SIZE; ++c)
+		{
+			if (m_board[r][c] != result[c])
+			{
+				moved = true;
+			}
+
+			m_board[r][c] = result[c];
+		}
+	}
+
+	return true;
 }
 
 bool MyFirstWndGame::MoveRight()
 {
-	std::cout << __FUNCTION__ << std::endl;
+	bool moved = false;
 
-	return false;
+	for (int r = 0; r < BOARD_SIZE; ++r)
+	{
+		int temp[BOARD_SIZE] = {};
+		int index = BOARD_SIZE - 1;
+
+		// 1. 오른쪽부터 숫자 모으기
+		for (int c = BOARD_SIZE - 1; c >= 0; --c)
+		{
+			if (m_board[r][c] != 0)
+			{
+				temp[index] = m_board[r][c];
+				--index;
+			}
+		}
+
+		// 2. 같은 숫자 합치기
+		for (int i = BOARD_SIZE - 1; i > 0; --i)
+		{
+			if (temp[i] != 0 && temp[i] == temp[i - 1])
+			{
+				temp[i] *= 2;
+				m_score += temp[i];
+
+				temp[i - 1] = 0;
+			}
+		}
+
+		// 3. 다시 오른쪽으로 밀기
+		int result[BOARD_SIZE] = {};
+		index = BOARD_SIZE - 1;
+
+		for (int i = BOARD_SIZE - 1; i >= 0; --i)
+		{
+			if (temp[i] != 0)
+			{
+				result[index] = temp[i];
+				--index;
+			}
+		}
+
+		// 4. 보드 적용
+		for (int c = 0; c < BOARD_SIZE; ++c)
+		{
+			if (m_board[r][c] != result[c])
+			{
+				moved = true;
+			}
+
+			m_board[r][c] = result[c];
+		}
+	}
+
+	return true;
 }
 
 bool MyFirstWndGame::MoveUp()
 {
-	std::cout << __FUNCTION__ << std::endl;
+	bool moved = false;
 
-	return false;
+	for (int c = 0; c < BOARD_SIZE; ++c)
+	{
+		int temp[BOARD_SIZE] = {};
+		int index = 0;
+
+		// 1. 위쪽부터 숫자 모으기
+		for (int r = 0; r < BOARD_SIZE; ++r)
+		{
+			if (m_board[r][c] != 0)
+			{
+				temp[index] = m_board[r][c];
+				++index;
+			}
+		}
+
+		// 2. 같은 숫자 합치기
+		for (int i = 0; i < BOARD_SIZE - 1; ++i)
+		{
+			if (temp[i] != 0 && temp[i] == temp[i + 1])
+			{
+				temp[i] *= 2;
+				m_score += temp[i];
+
+				temp[i + 1] = 0;
+			}
+		}
+
+		// 3. 합친 뒤 다시 위쪽으로 밀기
+		int result[BOARD_SIZE] = {};
+		index = 0;
+
+		for (int i = 0; i < BOARD_SIZE; ++i)
+		{
+			if (temp[i] != 0)
+			{
+				result[index] = temp[i];
+				++index;
+			}
+		}
+
+		// 4. 보드 적용
+		for (int r = 0; r < BOARD_SIZE; ++r)
+		{
+			if (m_board[r][c] != result[r])
+			{
+				moved = true;
+			}
+
+			m_board[r][c] = result[r];
+		}
+	}
+
+	return true;
 }
 
 bool MyFirstWndGame::MoveDown()
 {
-	std::cout << __FUNCTION__ << std::endl;
+	bool moved = false;
 
-	return false;
+	for (int c = 0; c < BOARD_SIZE; ++c)
+	{
+		int temp[BOARD_SIZE] = {};
+		int index = BOARD_SIZE - 1;
+
+		// 1. 아래쪽부터 숫자 모으기
+		for (int r = BOARD_SIZE - 1; r >= 0; --r)
+		{
+			if (m_board[r][c] != 0)
+			{
+				temp[index] = m_board[r][c];
+				--index;
+			}
+		}
+
+		// 2. 같은 숫자 합치기
+		for (int i = BOARD_SIZE - 1; i > 0; --i)
+		{
+			if (temp[i] != 0 && temp[i] == temp[i - 1])
+			{
+				temp[i] *= 2;
+				m_score += temp[i];
+
+				temp[i - 1] = 0;
+			}
+		}
+
+		// 3. 다시 아래쪽으로 밀기
+		int result[BOARD_SIZE] = {};
+		index = BOARD_SIZE - 1;
+
+		for (int i = BOARD_SIZE - 1; i >= 0; --i)
+		{
+			if (temp[i] != 0)
+			{
+				result[index] = temp[i];
+				--index;
+			}
+		}
+
+		// 4. 보드 적용
+		for (int r = 0; r < BOARD_SIZE; ++r)
+		{
+			if (m_board[r][c] != result[r])
+			{
+				moved = true;
+			}
+
+			m_board[r][c] = result[r];
+		}
+	}
+
+	return moved;
 }
